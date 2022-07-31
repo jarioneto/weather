@@ -1,7 +1,12 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { weatherTheme } from 'styles';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <div className={weatherTheme}>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default MyApp
+export default App
