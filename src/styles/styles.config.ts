@@ -12,7 +12,16 @@ export const stitches = createStitches({
   media: tokens.media
 });
 
-export const { config, css, getCssText, globalCss, keyframes, styled, theme, createTheme } = stitches;
+export const {
+  config,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme,
+  createTheme
+} = stitches;
 export const Tokens = tokens;
 
 export type CSS = Stitches.CSS<typeof stitches>;

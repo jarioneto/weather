@@ -1,10 +1,9 @@
 export const fontSizes = {
-  xxs: '0.5rem',
-  xs: '0.625rem',
-  small: '0.75rem',
-  medium: '0.875rem',
-  large: '1rem',
-  extraLarge: '1.25rem'
+  extraSmall: '0.8rem',
+  small: '1rem',
+  medium: '1.2rem',
+  large: '2rem',
+  extraLarge: '3rem'
 };
 
 export const fonts = {

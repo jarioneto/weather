@@ -3,7 +3,11 @@ module.exports = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/pages/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/pages/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts'
+  ],
   moduleNameMapper: {
     '~/components/(.+)': '<rootDir>/src/components/$1'
   },

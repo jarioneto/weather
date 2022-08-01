@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
-const withPlugins = require('next-compose-plugins');
-const withImages = require('next-images');
-const withSvgr = require('next-svgr');
-
-const nextConfig = withPlugins([withSvgr, withImages], {
+const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-});
+  swcMinify: true
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

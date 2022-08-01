@@ -13,8 +13,8 @@ import {
 export const weather = {
   colors,
   fonts: {
-    primary: `Poppins, ${fonts.heading}`,
-    secondary: `Poppins, ${fonts.body}`
+    heading: `Poppins, ${fonts.heading}`,
+    body: `Poppins, ${fonts.body}`
   },
   sizes,
   space: sizes,

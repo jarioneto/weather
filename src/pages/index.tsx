@@ -1,5 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import HomePage from 'components/HomePage';
 
 const Home: NextPage = () => {
   return (
@@ -9,14 +10,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Wheather App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1>
-          Welcome to Weather APP!
-        </h1>
-      </main>
+      <HomePage />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

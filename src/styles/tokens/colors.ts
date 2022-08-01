@@ -16,5 +16,5 @@ export const colors = {
   overlay: 'rgba(0, 0, 0, 0.3)',
   disabled: 'rgba(0, 0, 0, 0.16)',
   disabledLight: 'rgba(255, 255, 255, 0.16)',
-  background: '#FFFFFF',
+  background: '#FFFFFF'
 };
