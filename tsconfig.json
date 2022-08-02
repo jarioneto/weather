@@ -23,6 +23,8 @@
       "styles": ["src/styles"],
       "styles/*": ["src/styles/*"],
       "services/*": ["src/services/*"],
+      "config/*": ["src/config/*"],
+      "hooks/*": ["src/hooks/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

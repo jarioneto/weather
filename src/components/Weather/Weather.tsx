@@ -6,7 +6,7 @@ const Weather = (): JSX.Element => {
   return (
     <S.Container>
       <S.Title>
-        Bem-vindo ao <span>Wheather App</span>
+        Bem-vindo ao <span>Weather App</span>
       </S.Title>
       <Button>Consultar previsão</Button>
       <S.Divider />

@@ -19,6 +19,7 @@ const StyledButton = styled(BUTTON_TAG, {
   borderRadius: '$large',
   padding: '$3 $6',
   fontSize: '$medium',
+  letterSpacing: '$wide',
 
   transition: `
     background 150ms ease,

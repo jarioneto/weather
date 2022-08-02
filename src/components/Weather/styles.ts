@@ -52,7 +52,8 @@ export const Info = styled('div', {
   width: '100%',
   padding: '$3',
   borderRadius: '$medium',
-  backgroundColor: '#f0f0f0',
+  backgroundColor: '$background',
+  border: 'solid 1px #d1d1d1',
   color: '#919191',
 
   '@tablet': {
