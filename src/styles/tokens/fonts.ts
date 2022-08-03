@@ -12,7 +12,7 @@ export const fonts = {
 };
 
 export const fontWeights = {
-  regular: 400,
+  regular: 300,
   medium: 500,
   heavy: 600,
   light: 300,

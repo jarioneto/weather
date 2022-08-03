@@ -34,7 +34,7 @@ export const Content = styled('section', {
   position: 'relative',
   display: 'grid',
   gridArea: 'content',
-  height: 'calc(100vh - 122px)',
+  minHeight: 'calc(100vh - 122px)',
   padding: '$4',
   justifyContent: 'center',
 

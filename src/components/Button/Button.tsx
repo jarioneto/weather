@@ -17,7 +17,7 @@ const StyledButton = styled(BUTTON_TAG, {
   background: '$secondary',
   color: '$secondaryContrast',
   borderRadius: '$large',
-  padding: '$3 $6',
+  padding: '$2 $6',
   fontSize: '$medium',
   letterSpacing: '$wide',
 

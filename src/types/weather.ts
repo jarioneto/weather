@@ -30,7 +30,7 @@ export interface Weather {
   id: number;
   name: string;
   coord: WeatherCoordinates;
-  weather: WeatherData;
+  weather: Array<WeatherData>;
   main: WeatherMain;
   wind: WeatherWind;
   sys: WeatherSystem;

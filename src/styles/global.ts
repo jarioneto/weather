@@ -6,7 +6,8 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
     fontFamily: '$body',
-    fontWeight: '$regular'
+    fontWeight: '$regular',
+    color: '$primary'
   },
   body: {
     minHeight: '100vh'

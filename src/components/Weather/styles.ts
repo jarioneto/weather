@@ -1,29 +1,60 @@
 import { styled } from 'styles';
 
 export const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'space-evenly',
-  width: 300,
-  height: 450,
+  display: 'grid',
+  maxWidth: '100%',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+  columnGap: '$5',
+  rowGap: '$10',
 
   '@tablet': {
-    width: 400,
+    marginTop: 60,
+    maxWidth: 1000,
     height: 500
   }
 });
 
+export const Section = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  '&:first-child': {
+    order: 2,
+    margin: '$10 0'
+  },
+
+  '@tablet': {
+    minWidth: 400,
+
+    '&:first-child': {
+      order: 0,
+      margin: 'unset',
+      borderRight: 'solid 1px #e8e8e8'
+    }
+  }
+});
+
+export const Content = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: 530
+});
+
 export const Title = styled('h3', {
-  textAlign: 'center',
+  display: 'none',
   fontSize: '$medium',
+  marginBottom: '5rem',
 
   '& > span': {
+    display: 'block',
     fontSize: '$large',
     fontWeight: 'bold'
   },
 
   '@tablet': {
+    display: 'block',
     fontSize: '$large',
 
     '& > span': {
@@ -32,31 +63,60 @@ export const Title = styled('h3', {
   }
 });
 
-export const Text = styled('h3', {
-  textAlign: 'center',
-  fontSize: '$extraSmall',
+export const Box = styled('div', {
+  display: 'flex',
 
-  '@tablet': {
-    fontSize: '$small'
+  variants: {
+    direction: {
+      row: {
+        flexDirection: 'row'
+      },
+      column: {
+        flexDirection: 'column'
+      }
+    },
+    align: {
+      start: {
+        alignItems: 'flex-start'
+      },
+      center: {
+        alignItems: 'center'
+      }
+    }
+  },
+  defaultVariants: {
+    align: 'start',
+    direction: 'row'
   }
 });
 
-export const Divider = styled('hr', {
-  height: 1,
-  width: 110,
-  border: 'none',
-  backgroundColor: '#d1d1d1'
+export const Typography = styled('h4', {
+  fontSize: '$medium',
+  textTransform: 'capitalize',
+
+  variants: {
+    size: {
+      medium: {
+        fontSize: '$medium'
+      },
+      large: {
+        fontSize: '$large'
+      },
+      extraLarge: {
+        fontSize: '$extraLarge'
+      },
+      extraLarge2: {
+        fontSize: '8rem',
+        fontWeight: '$medium',
+        lineHeight: '$none'
+      }
+    }
+  }
 });
 
-export const Info = styled('div', {
-  width: '100%',
-  padding: '$3',
-  borderRadius: '$medium',
-  backgroundColor: '$background',
-  border: 'solid 1px #d1d1d1',
-  color: '#919191',
-
-  '@tablet': {
-    padding: '$4'
-  }
+export const ListAttributes = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: 180
 });
