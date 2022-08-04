@@ -1,13 +1,13 @@
 import React from 'react';
 import * as S from './styles';
 
-interface AttributeProps {
+interface WeatherAttributeProps {
   label: string;
   text: string;
   icon: React.ReactNode;
 }
 
-const Attribute = ({ label, text, icon }: AttributeProps): JSX.Element => {
+const WeatherAttribute = ({ label, text, icon }: WeatherAttributeProps): JSX.Element => {
   return (
     <S.Container>
       {icon}
@@ -19,4 +19,4 @@ const Attribute = ({ label, text, icon }: AttributeProps): JSX.Element => {
   );
 };
 
-export default Attribute;
+export default WeatherAttribute;

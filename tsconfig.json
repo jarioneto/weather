@@ -25,6 +25,7 @@
       "services/*": ["src/services/*"],
       "config/*": ["src/config/*"],
       "hooks/*": ["src/hooks/*"],
+      "utils/*": ["src/utils/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import HomePage from 'components/HomePage';
+import Home from 'components/Home';
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <div>
       <Head>
@@ -10,9 +10,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Wheather App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomePage />
+      <Home />
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

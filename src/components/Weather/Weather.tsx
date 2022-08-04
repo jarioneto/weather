@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from 'components/Button';
 import { SectionLoader } from 'components/Loader';
-import Attribute from 'components/Attribute';
+import WeatherAttribute from 'components/WeatherAttribute';
 import Wind from 'components/Icons/Wind';
 import Humidity from 'components/Icons/Humidity';
 import Temperature from 'components/Icons/Temperature';
@@ -44,9 +44,9 @@ const WeatherDetails = ({ details }: WeatherDetailsProps): JSX.Element => {
         <S.Typography size="extraLarge2">{temperature}</S.Typography>
       </S.Box>
       <S.ListAttributes>
-        <Attribute label="ventos" text={wind} icon={<Wind />} />
-        <Attribute label="umidade" text={humidity} icon={<Humidity />} />
-        <Attribute label="maxíma" text={temperatureMax} icon={<Temperature />} />
+        <WeatherAttribute label="ventos" text={wind} icon={<Wind />} />
+        <WeatherAttribute label="umidade" text={humidity} icon={<Humidity />} />
+        <WeatherAttribute label="maxíma" text={temperatureMax} icon={<Temperature />} />
       </S.ListAttributes>
     </S.Content>
   );
@@ -69,7 +69,9 @@ const Weather = ({ isLoading, weather, onClick }: WeatherProps): JSX.Element => 
         <S.Title>
           Dados da sua <span>Região</span>
         </S.Title>
-        <Button onClick={onClick}>Atualizar dados</Button>
+        <Button disabled={isLoading} onClick={onClick}>
+          Atualizar dados
+        </Button>
       </S.Section>
       <S.Section>
         {isLoading && <SectionLoader />}

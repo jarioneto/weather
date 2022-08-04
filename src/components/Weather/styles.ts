@@ -1,4 +1,5 @@
 import { styled } from 'styles';
+import { fadeIn } from 'styles/global';
 
 export const Container = styled('div', {
   display: 'grid',
@@ -6,6 +7,7 @@ export const Container = styled('div', {
   gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
   columnGap: '$5',
   rowGap: '$10',
+  animation: `${fadeIn} 1s ease`,
 
   '@tablet': {
     marginTop: 60,

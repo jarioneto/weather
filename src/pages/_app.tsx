@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Toaster } from 'react-hot-toast';
 import { weatherTheme } from 'styles';
 import { globalStyles } from 'styles/global';
 
@@ -14,6 +15,7 @@ function App({ Component, pageProps }: AppProps) {
       <div className={weatherTheme}>
         <Component {...pageProps} />
       </div>
+      <Toaster />
     </>
   );
 }

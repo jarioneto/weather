@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react';
 import * as API from 'services/api';
+import { getCoordinates } from 'utils/coordinates';
 import { Weather } from 'types';
+import toast from 'react-hot-toast';
 
 interface UseFetchAccounts {
   weather: Weather | null;
@@ -14,34 +16,6 @@ export default function useFetchAccounts(): UseFetchAccounts {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const defaultError = 'Não foi possível obter a sua localização';
-
-  const getCoordinates = (): Promise<GeolocationCoordinates> => {
-    return new Promise((resolve, reject) => {
-      const callbackSucess = (position: GeolocationPosition) => {
-        resolve(position.coords);
-      };
-
-      const callbackError = (positionError: GeolocationPositionError) => {
-        const errorMessage =
-          positionError.code === GeolocationPositionError.PERMISSION_DENIED
-            ? `Permissão negada! ${defaultError}`
-            : defaultError;
-
-        reject(errorMessage);
-      };
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callbackSucess, callbackError);
-      } else {
-        const errorMessage =
-          'O recurso de geocalização não é suportado pelo seu navegador';
-
-        reject(errorMessage);
-      }
-    });
-  };
-
   const loadWeather = useCallback(async () => {
     setLoading(true);
     setError(null);
@@ -54,15 +28,15 @@ export default function useFetchAccounts(): UseFetchAccounts {
         lon: coordinates.longitude
       };
 
-      API.fetchWeather(data)
-        .then(({ data }) => {
-          setWeather(data);
-        })
-        .catch(() => {
-          setError(defaultError);
-        });
+      const response = await API.fetchWeather(data);
+      setWeather(response.data);
     } catch (error) {
-      setError(error as string);
+      const errorMessage =
+        typeof error === 'string' ? error : 'Não foi possível obter a sua localização';
+
+      toast.error(errorMessage);
+
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

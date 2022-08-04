@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from 'components/Icons/Logo';
 import Welcome from 'components/Welcome';
 import Weather from 'components/Weather';
+import useWeather from 'hooks/useWeather';
 
 import * as S from './styles';
-import useWeather from 'hooks/useWeather';
 
 type ComponentName = 'welcome' | 'weather';
 
 const HomePage = (): JSX.Element => {
   const [componentName, setComponentName] = useState<ComponentName>('welcome');
-  const { loading, loadWeather, weather } = useWeather();
+  const { loading, loadWeather, weather, error } = useWeather();
+
+  useEffect(() => {
+    error && setComponentName('welcome');
+  }, [error]);
 
   const handleLoadWeather = () => {
     loadWeather();

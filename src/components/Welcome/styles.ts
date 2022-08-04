@@ -1,4 +1,5 @@
 import { styled } from 'styles';
+import { fadeIn } from 'styles/global';
 
 export const Container = styled('div', {
   display: 'flex',
@@ -7,6 +8,7 @@ export const Container = styled('div', {
   justifyContent: 'space-evenly',
   width: 300,
   height: 450,
+  animation: `${fadeIn} 1s ease`,
 
   '@tablet': {
     width: 400,

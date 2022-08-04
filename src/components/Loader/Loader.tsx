@@ -6,7 +6,7 @@ import * as S from './styles';
  * Loader
  * -----------------------------------------------------------------------------------------------*/
 
-export const Loader = (): JSX.Element => {
+const Loader = (): JSX.Element => {
   return (
     <S.Spin>
       <div />

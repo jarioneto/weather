@@ -7,6 +7,10 @@ const nextConfig = {
   },
   env: {
     WEATHER_APP_ID: process.env.WEATHER_APP_ID
+  },
+  i18n: {
+    locales: ['pt-BR'],
+    defaultLocale: 'pt-BR'
   }
 };
 
