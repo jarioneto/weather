@@ -1,34 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Weather App
 
-First, run the development server:
+![CI](https://github.com/jarioneto/weather/workflows/CI/badge.svg?branch=master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40e2599a-9f15-4d2a-a7cb-899d5e911078/deploy-status)](https://app.netlify.com/sites/weather-app-br/deploys)
+![react](https://img.shields.io/github/package-json/dependency-version/jarioneto/weather/react)
+![typescript](https://img.shields.io/github/package-json/dependency-version/jarioneto/weather/typescript)
+
+Aplicação para consulta dos dados climáticos da sua localização atual.
+
+![Wheather home](screenshot/weather-home.png)
+
+![Wheather details](screenshot/weather-details.png)
+
+Para acesso a aplicação utilizar o link a seguir [Weather App](https://weather-app-br.netlify.app).
+
+Stack utilizada no desenvolvimento:
+* TypeScript
+* React
+* Next.js
+* Jest
+* React Testing Library
+* ESlint
+* Prettier
+* Continuos Integration
+  * Github Actions (**build, lint, test**)
+
+# Configuração inicial
+
+Execute os passos abaixo para realizar a configuração inicial da aplicação.
+
+
+### 1 - Variáveis de ambiente
+
+Crie uma cópia do arquivo .env.example e e renomeie para .env
 
 ```bash
-npm run dev
-# or
+cp .env.example .env
+```
+
+Edite o arquivo criado no passo anterior e informe a Api Id
+
+```bash
+WEATHER_APP_ID=9d62fceb781927c0e938f62f25a45e77
+```
+
+
+### 2 - Instalação das dependências
+
+Para instalar as dependências da aplicação execute o comando abaixo:
+
+```bash
+yarn
+```
+
+# Scripts disponíveis
+
+### Execução em modo de desenvolvimento
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Executar linter do código
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn lint
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Criar build de produção
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn build
+```
 
-## Learn More
+### Executar testes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+yarn test
+```
