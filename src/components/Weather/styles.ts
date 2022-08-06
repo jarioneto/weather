@@ -41,7 +41,12 @@ export const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  height: 530
+  height: 530,
+
+  '& img': {
+    WebkitFilter: 'drop-shadow(3px 3px 6px #555)',
+    filter: 'drop-shadow(3px 3px 6px #555)'
+  }
 });
 
 export const Title = styled('h3', {
