@@ -15,6 +15,7 @@ describe('Loader component', () => {
         >
           <div
             class="weather--c-kqvlEC"
+            role="progressbar"
           >
             <div />
             <div />
@@ -33,6 +34,7 @@ describe('Loader component', () => {
       <div>
         <div
           class="weather--c-kqvlEC"
+          role="progressbar"
         >
           <div />
           <div />

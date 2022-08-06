@@ -1,3 +1,5 @@
+const PERMISSION_DENIED = 1;
+
 export const getCoordinates = (): Promise<GeolocationCoordinates> => {
   const defaultError = 'Não foi possível obter a sua localização';
 
@@ -8,7 +10,7 @@ export const getCoordinates = (): Promise<GeolocationCoordinates> => {
 
     const callbackError = (positionError: GeolocationPositionError) => {
       const errorMessage =
-        positionError.code === GeolocationPositionError.PERMISSION_DENIED
+        positionError.code === PERMISSION_DENIED
           ? `Permissão negada! ${defaultError}`
           : defaultError;
 
