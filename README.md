@@ -4,7 +4,7 @@
 ![CI](https://github.com/jarioneto/weather/workflows/CI/badge.svg?branch=master)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40e2599a-9f15-4d2a-a7cb-899d5e911078/deploy-status)](https://app.netlify.com/sites/weather-app-br/deploys)
 ![react](https://img.shields.io/github/package-json/dependency-version/jarioneto/weather/react)
-![typescript](https://img.shields.io/github/package-json/dependency-version/jarioneto/weather/typescript)
+![typescript](https://img.shields.io/github/package-json/dependency-version/jarioneto/weather/next)
 
 Aplicação para consulta dos dados climáticos da sua localização atual.
 
