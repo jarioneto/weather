@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Logo from 'components/Icons/Logo';
 import Welcome from 'components/Welcome';
 import Weather from 'components/Weather';
@@ -6,29 +6,10 @@ import useWeather from 'hooks/useWeather';
 
 import * as S from './styles';
 
-type ComponentName = 'welcome' | 'weather';
+const Home = (): JSX.Element => {
+  const { status, loadWeather, weather } = useWeather();
 
-const HomePage = (): JSX.Element => {
-  const [componentName, setComponentName] = useState<ComponentName>('welcome');
-  const { loading, loadWeather, weather, error } = useWeather();
-
-  useEffect(() => {
-    error && setComponentName('welcome');
-  }, [error]);
-
-  const handleLoadWeather = () => {
-    loadWeather();
-    setComponentName('weather');
-  };
-
-  const components = {
-    welcome: () => <Welcome onClick={handleLoadWeather} />,
-    weather: () => (
-      <Weather isLoading={loading} weather={weather} onClick={handleLoadWeather} />
-    )
-  };
-
-  const Component = components[componentName];
+  const isLoading = status === 'pending';
 
   return (
     <S.Layout>
@@ -39,10 +20,14 @@ const HomePage = (): JSX.Element => {
         </S.Box>
       </S.Header>
       <S.Content>
-        <Component />
+        {status === 'initial' ? (
+          <Welcome isLoading={isLoading} onClick={loadWeather} />
+        ) : (
+          <Weather isLoading={isLoading} weather={weather} onClick={loadWeather} />
+        )}
       </S.Content>
     </S.Layout>
   );
 };
 
-export default HomePage;
+export default Home;

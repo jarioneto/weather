@@ -28,8 +28,7 @@ const StyledButton = styled(BUTTON_TAG, {
   `,
 
   '&:disabled, &[disabled], &[aria-disabled=true]': {
-    background: '$disabled',
-    color: '$neutralBody',
+    opacity: 0.5,
     pointerEvents: 'none',
     cursor: 'auto'
   },
@@ -59,7 +58,7 @@ type ButtonProps = React.ComponentPropsWithoutRef<typeof StyledButton> & {
 type ButtonElement = React.ElementRef<typeof StyledButton>;
 type ButtonOwnProps = ComponentCSSProp & ButtonProps;
 
-export const Button = React.forwardRef<ButtonElement, ButtonOwnProps>(
+const Button = React.forwardRef<ButtonElement, ButtonOwnProps>(
   ({ children, disabled, isLoading, loadingText, ...props }, forwardRef) => {
     const isDisabled = disabled || isLoading;
 

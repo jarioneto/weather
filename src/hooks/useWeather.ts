@@ -4,21 +4,20 @@ import { getCoordinates } from 'utils/coordinates';
 import { Weather } from 'types';
 import toast from 'react-hot-toast';
 
-interface UseFetchAccounts {
+type Status = 'initial' | 'pending' | 'resolved';
+
+interface UseWeather {
   weather: Weather | null;
-  loading: boolean;
-  error: string | null;
+  status: Status;
   loadWeather: () => void;
 }
 
-export default function useFetchAccounts(): UseFetchAccounts {
+export default function useWeather(): UseWeather {
   const [weather, setWeather] = useState<Weather | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<Status>('initial');
 
   const loadWeather = useCallback(async () => {
-    setLoading(true);
-    setError(null);
+    setStatus('pending');
 
     try {
       const coordinates = await getCoordinates();
@@ -29,18 +28,18 @@ export default function useFetchAccounts(): UseFetchAccounts {
       };
 
       const response = await API.fetchWeather(data);
+
       setWeather(response.data);
+      setStatus('resolved');
     } catch (error) {
-      const errorMessage =
-        typeof error === 'string' ? error : 'Não foi possível obter a sua localização';
+      const errorDefault = 'Não foi possível obter a sua localização';
+      const errorMessage = typeof error === 'string' ? error : errorDefault;
 
       toast.error(errorMessage);
 
-      setError(errorMessage);
-    } finally {
-      setLoading(false);
+      setStatus('initial');
     }
   }, []);
 
-  return { weather, loading, error, loadWeather };
+  return { weather, status, loadWeather };
 }

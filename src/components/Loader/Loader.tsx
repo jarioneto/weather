@@ -8,7 +8,7 @@ import * as S from './styles';
 
 const Loader = (): JSX.Element => {
   return (
-    <S.Spin>
+    <S.Spin role="progressbar">
       <div />
       <div />
       <div />

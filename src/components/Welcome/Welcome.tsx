@@ -3,16 +3,23 @@ import React from 'react';
 import * as S from './styles';
 
 interface WelcomeProps {
+  isLoading: boolean;
   onClick: () => void;
 }
 
-const Welcome = ({ onClick }: WelcomeProps): JSX.Element => {
+const Welcome = ({ isLoading, onClick }: WelcomeProps): JSX.Element => {
   return (
     <S.Container>
       <S.Title>
         Bem-vindo ao <span>Weather App</span>
       </S.Title>
-      <Button onClick={onClick}>Consultar previsão</Button>
+      <Button
+        isLoading={isLoading}
+        loadingText="Obtendo localização..."
+        onClick={onClick}
+      >
+        Consultar previsão
+      </Button>
       <S.Divider />
       <S.Info>
         <S.Text>

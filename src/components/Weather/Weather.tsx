@@ -69,7 +69,7 @@ const Weather = ({ isLoading, weather, onClick }: WeatherProps): JSX.Element => 
         <S.Title>
           Dados da sua <span>Região</span>
         </S.Title>
-        <Button disabled={isLoading} onClick={onClick}>
+        <Button isLoading={isLoading} loadingText="Carregando..." onClick={onClick}>
           Atualizar dados
         </Button>
       </S.Section>
